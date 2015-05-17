@@ -2,6 +2,7 @@ package uk.serket.cloud.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by daijin on 17/05/2015.
@@ -10,17 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/*/createUser")
-    public String createUser() {
-        System.out.println("/user/*/createUser");
+    @RequestMapping("/r1")
+    public String requestParm(String name, @RequestParam("password") String pwd) {
+        System.out.println(name);
+        System.out.println(pwd);
         return "index";
     }
-
-    @RequestMapping("/**/createUser2")
-    public String createUser2() {
-        System.out.println("/user/**/createUser");
-        return "index";
-    }
-
 
 }
