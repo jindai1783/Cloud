@@ -1,10 +1,7 @@
 package uk.serket.cloud.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import uk.serket.cloud.bean.User;
 
 /**
@@ -25,6 +22,15 @@ public class UserController {
     public String requestParm3(@PathVariable("userid")String userid) {
         System.out.println(userid);
         return "index";
+    }
+
+    @RequestMapping("/r4")
+    @ResponseBody
+    public User getuser() {
+        User user = new User();
+        user.setName("Tome");
+        user.setPassword("123123");
+        return user;
     }
 
 }
