@@ -5,7 +5,13 @@ package uk.serket.cloud;
  */
 public class A implements IA {
 
+    private IB b;
+
     public void sayHello() {
-        System.out.println("Hello World!");
+        b.say();
+    }
+
+    public void setB(IB b) {
+        this.b = b;
     }
 }
